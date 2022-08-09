@@ -1,10 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
-
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) if can_edit?(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+<div class="container">
+  <div class="d-flex align-items-center min-vh-100 justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <%= render @post %>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <%= link_to "Edit", edit_post_path(@post), class: "btn btn-primary" if can_edit?(@post) %> |
+        <%= button_to "Destroy", @post, class: "btn btn-danger", method: :delete %> |
+        <%= link_to "Back", posts_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+

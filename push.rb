@@ -12,7 +12,7 @@ def run_commands
   commands.each do |command|
     puts command
     # know when test in rspec failed
-    # unless system(command)
+    system(command)
     #   puts 'Test failed'
     #   exit 1
     # end

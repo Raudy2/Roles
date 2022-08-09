@@ -96,6 +96,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-pwned_password (0.1.9)
+      devise (~> 4)
+      pwned (~> 2.0.0)
     digest (3.1.0)
     erubi (1.10.0)
     globalid (1.0.0)
@@ -143,6 +146,7 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
+    pwned (2.0.2)
     racc (1.6.0)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -234,6 +238,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.8)
+  devise-pwned_password (~> 0.1.9)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

@@ -21,6 +21,11 @@
     <%= form.text_area :content, class: 'form-control', maxlength: 1000 %>
   </div>
 
+  <div class="mb-3">
+    <%= form.label :images %>
+    <%= form.file_field :images %>
+  </div>
+
   <div class='action'>
     <%= form.submit %>
   </div>

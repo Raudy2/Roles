@@ -1,8 +1,7 @@
 
-<div class="container">
-  <div class="d-flex align-items-center min-vh-100 justify-content-center">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body">
+<section class="h-full gradient-form bg-gray-200 md:h-screen">
+  <div class="container py-12 px-6 h-full">
+    <div class="flex justify-center w-full mx-auto sm:w-6/12 md:w-8/12 items-center flex-wrap h-full g-6 text-gray-800">
         <h2 class="card-text d-flex mt-3 mb-3 justify-content-center">Sign up</h2>
 
         <%= form_for(resource, as: resource_name, html: {"data-turbo": false, class: "row"}, url: registration_path(resource_name)) do |f| %>

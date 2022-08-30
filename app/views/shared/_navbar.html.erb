@@ -1,20 +1,29 @@
 <nav class="relative h-full flex flex-wrap items-center justify-between py-3 bg-gray-100 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg ">
   <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
     <%= image_tag('wolf-logo.png', width:"50", height: "50")%>
-    <ul class="navbar-nav flex-1 flex flex-row items-center px-px mr-auto list-none">
+    <ul class="navbar-nav flex-1  flex flex-row items-center px-px  list-none">
       <li class="nav-item p-2"><%= link_to 'Master', root_path, class:"nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" %></li>
     <% if user_signed_in? %>
       <li class="nav-item p-2 ">
         <%= link_to 'Blogs', posts_path, class:"nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" %>
       </li>
 
-      <li class="nav-item p-2">
-        <%= link_to 'My Profile', edit_user_registration_path, class:"nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" %>
-      </li>
+      <div class="dropdown is-hovered has-large-text ml-auto">
+        <div class=" dropdown-wrap">
+          <%= user_avatar current_user, include_user: true, class: 'rounded-full'%><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-6 h-6" fill="currentColor"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+        </div>
 
-      <li class="nav-item p-2 ml-auto">
-        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm text-gray-800 hover:text-gray-300 focus:text-gray-300" %>
-      </li>
+        <div class="dropdown-content">
+          <li class="nav-item p-2">
+            <%= link_to 'Profile', edit_user_registration_path, class:"nav-link dropdown-item" %>
+          </li>
+
+          <li class="nav-item p-2 ">
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item text-red-800 " %>
+          </li>
+        </div>
+      </div>
+
     <% else %>
       <li class="nav-item p-2">
         <%= link_to 'Sign in', new_user_session_path, class: 'nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0' %>

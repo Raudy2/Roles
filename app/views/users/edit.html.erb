@@ -1,0 +1,20 @@
+<h2 class="mb-4"><%= t(".edit_password") %></h2>
+  <%= form_for( current_user, :url => { :action => "update_password" }, html: { class: "md:fields-double" } ) do |f| %>
+    <%= render "shared/error_messages", resource: current_user %>
+    <div class="field">
+      <%= f.label :password, class: "label" %>
+      <%= f.password_field :password, required: true, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, class: "label" %>
+      <%= f.password_field :password_confirmation, required: true, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :current_password, class: "label" %>
+      <%= f.password_field :current_password, required: true, class: "form-control" %>
+      <p class="text-sm text-slate-500"><%= t(".confirm_actual_password_text") %></p>
+    </div>
+    <div class="field field-button">
+      <%= f.submit t(".change_my_password"), class: "btn btn-primary" %>
+    </div>
+  <% end %>

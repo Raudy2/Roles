@@ -1,3 +1,4 @@
+@import "./css/dropdown.tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,5 +8,35 @@
 @layer components {
   .btn-danger {
     @apply  hover:bg-red-500 px-4 py-2;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary-500 border-primary-500;
+    &:hover { @apply bg-primary-700 border-primary-700; }
+    &.semi-transparent {
+      @apply bg-primary-500 border-primary-300 bg-opacity-20 border-opacity-20 text-primary-700;
+      &:hover {
+        @apply bg-opacity-50 border-opacity-50;
+      }
+    }
+  }
+  .btn-primary-outline {
+    @apply text-primary-500 bg-transparent border-2 border-primary-500;
+    &:hover {
+      @apply bg-primary-500 text-white;
+    }
+  }
+
+  .btn-danger {
+    @apply text-white bg-danger-500 border-danger-500;
+    :hover {
+      @apply bg-danger-600 border-danger-600;
+    }
+  }
+  .btn-danger-outline {
+    @apply text-danger-500 bg-transparent border-2 border-danger-500;
+    :hover {
+      @apply bg-danger-600 text-white;
+    }
   }
 }

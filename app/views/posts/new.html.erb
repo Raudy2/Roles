@@ -1,12 +1,12 @@
-<div class="container">
-  <h1 class="d-flex justify-content-center">New post</h1>
-
-  <%= render "form", post: @post %>
-
-  <br>
-
-  <div>
-    <%= link_to "Back to posts", posts_path %>
+<section class="h-full gradient-form md:h-screen">
+  <div class="container py-12 px-6 h-full">
+    <div class="flex justify-center w-full mx-auto sm:w-6/12 md:w-8/12 items-center flex-wrap h-full g-6 text-gray-800">
+      <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
+        <h1 class="flex justify-center text-center text-2xl text-black py-2">New post</h1>
+        <%= render "form", post: @post %>
+        <br>
+        <%= link_to "Back to posts", posts_path %>
+     </div>
+    </div>
   </div>
-
-</div>
+</section>

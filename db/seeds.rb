@@ -18,4 +18,4 @@ admin.user_roles.create(role: admin_user_role)
 admin.user_roles.create(role: admin_post_role)
 editor.user_roles.create(role: editor_post_role)
 
-FactoryBot.create_list(:posts, 10)
+FactoryBot.create_list(:post, 40)

@@ -8,6 +8,11 @@ class User < ApplicationRecord
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles
 
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, nil]
+  end
+
+
   def can_edit?(resource)
 
     # User.class => "Class"

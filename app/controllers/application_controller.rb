@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
+  
+  #Helpers
+  include Pagy::Backend
 
+  #Callbacks
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+
+  #Methods
 
   def after_sign_in_path_for(resource)
     set_flash_message! :alert, :warn_pwned if resource.respond_to?(:pwned?) && resource.pwned?

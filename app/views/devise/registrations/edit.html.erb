@@ -1,53 +1,50 @@
 <div class="h-full gradient-form md:h-screen">
-  <div class="container py-12 px-6 h-full">
-    <div class="bg-white flex justify-center w-full mx-auto sm:w-6/10 md:w-8/10 items-center flex-wrap h-full g-6 text-gray-800" >
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {"data-turbo": false, method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="bg-white flex justify-center w-full mx-auto sm:w-6/10 md:w-8/10 items-center flex-wrap h-full g-6 text-gray-800" >
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {"data-turbo": false, method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="mb-6">
-          <%= f.label :email, class: "form-label" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none' %>
-        </div>
+      <div class="mb-6">
+        <%= f.label :email, class: "form-label" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none' %>
+      </div>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
 
-        <div class="mb-6">
-          <%= f.label :password, class: "form-label"%> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', autocomplete: "new-password" %>
-        </div>
+      <div class="mb-6">
+        <%= f.label :password, class: "form-label"%> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', autocomplete: "new-password" %>
+      </div>
 
-        <div class="form-group mb-6">
-        <%= f.label :avatar, class: 'form-label' %>
+      <div class="form-group mb-6">
+      <%= f.label :avatar, class: 'form-label' %>
 
-        <div class="flex items-center gap-4">
-            <%= user_avatar f.object, class: "rounded-full" %>
-            <div>
-              <%= f.file_field :avatar, accept: "image/*", class: "file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100" %>
-            </div>
+      <div class="flex items-center gap-4">
+          <%= user_avatar f.object, class: "rounded-full" %>
+          <div>
+            <%= f.file_field :avatar, accept: "image/*", class: "file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100" %>
           </div>
         </div>
+      </div>
 
-        <div class="mb-6 ">
-          <%= f.label :password_confirmation, class: "form-label" %><br />
-          <%= f.password_field :password_confirmation, class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', autocomplete: "new-password" %>
-        </div>
+      <div class="mb-6 ">
+        <%= f.label :password_confirmation, class: "form-label" %><br />
+        <%= f.password_field :password_confirmation, class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', autocomplete: "new-password" %>
+      </div>
 
-        <div class="mb-6">
-          <%= f.label :current_password, class: 'form-label' %> <i>(we need your current password to confirm your changes)</i><br />
-          <%= f.password_field :current_password, class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', autocomplete: "current-password" %>
-        </div>
+      <div class="mb-6">
+        <%= f.label :current_password, class: 'form-label' %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounder transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', autocomplete: "current-password" %>
+      </div>
 
-        <div class="mb-6">
-          <%= f.submit "Update", class: "inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-lg btn-primary-outline hover:text-white hover:bg-primary-500 focus:ring-0  transition duration-150 ease-in-out w-full" %>
-        </div>
-        <div class="mb-6 flex flex-wrap justify-center items-center">
-          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" },class: 'btn-danger-outline hover:bg-danger-600 hover:text-white ', method: :delete %></p>
-        </div>
-      <% end %>
-    </div>
-
+      <div class="mb-6">
+        <%= f.submit "Update", class: "inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-lg btn-primary-outline hover:text-white hover:bg-primary-500 focus:ring-0  transition duration-150 ease-in-out w-full" %>
+      </div>
+      <div class="mb-6 flex flex-wrap justify-center items-center">
+        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" },class: 'btn-danger-outline hover:bg-danger-600 hover:text-white ', method: :delete %></p>
+      </div>
+    <% end %>
   </div>
 
 </div>

@@ -84,3 +84,5 @@ gem "devise-pwned_password", "~> 0.1.9"
 gem "tailwindcss-rails", "~> 2.0"
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+gem "pagy", "~> 5.10"

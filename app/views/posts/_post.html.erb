@@ -1,19 +1,17 @@
-<div class="container py-12 px-6 h-full">
-  <div id="<%= dom_id post %>" class="flex flex-1 justify-center">
-    <div class="rounded-lg shadow-lg bg-white max-x-sm">
-      <%= image_tag(post.images, class: 'rounded-t-lg h-32 items-center', alt: 'Phone image') %>
-      <h1 class="card-title">
-        <%= post.title %>
-      </h1>
+<div id="<%= dom_id post %>">
+  <div>
+    <%= image_tag(post.images, class: "rounded-t-lg h-36 items-center") if post.images.persisted? %>
+    
+    <h1 class="text-black text-center text-gray-900 text-3xl m-2">
+      <%= post.title %>
+    </h1>
 
-      <p class="text-lg font-medium ">
-        <%= post.content %>
-      </p>
+    <p class="text-lg p-2 font-medium break-words ">
+      <%= post.content %>
+    </p>
 
-      <p class="text-sky-500 dark:text-sky-400">
-        <%= post.author.name %>
-      </p>
-    </div>
-
+    <p class=" text-center p-2">
+      <strong>Author:</strong> <%= link_to post.author.name, edit_user_registration_path, class: 'p-1 text-sky-500 dark:text-sky-400' %>
+    </p>
   </div>
 </div>

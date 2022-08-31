@@ -14,12 +14,12 @@
         </div>
 
         <div class="dropdown-content">
-          <li class="nav-item p-2">
-            <%= link_to 'Profile', edit_user_registration_path, class:"nav-link dropdown-item" %>
+          <li class="dropdown-item">
+            <%= link_to 'Profile', edit_user_registration_path, class:"nav-link" %>
           </li>
 
-          <li class="nav-item p-2 ">
-            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item text-red-800 " %>
+          <li class="dropdown-item ">
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "font-semibold text-red-600" %>
           </li>
         </div>
       </div>

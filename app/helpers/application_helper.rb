@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
 
   def can_edit?(resource)
     return false unless user_signed_in?

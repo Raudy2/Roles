@@ -16,9 +16,10 @@
   <%= form.text_field :title, placeholder:"Your title", class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none' %>
 </div>
 
-<div class='mb-6'>
+<div class='mb-6' data-controller="text-limiter" data-text-limiter-limit-value=1000>
   <%= form.label :content, class: 'form-label py-2' %>
-  <%= form.text_area :content, class: 'form-control block w-full h-48 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder:"Your message", maxlength: 1000 %>
+  <%#= form.text_area :content, class: 'form-control block w-full h-48 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder:"Your message", maxlength: 1000 %>
+  <%= form.text_area :content, class: 'form-control block w-full h-48 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder:"Your message" %>
 </div>
 
 <div class="mb-6">

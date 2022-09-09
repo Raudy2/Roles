@@ -1,11 +1,4 @@
 
-#flash {
-  @apply cursor-pointer rounded overflow-hidden shadow-base absolute top-8 right-8 z-10;
-  p {
-    @apply mb-0;
-  }
-}
-
 .alert {
   @apply border border-gray-500 bg-gray-100 text-gray-700 px-4 py-2 rounded font-sans;
 
@@ -22,6 +15,7 @@
   }
 
   &.alert-warning {
+    
     @apply border-yellow-500 bg-yellow-100 text-yellow-600;
   }
 

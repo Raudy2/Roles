@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     controllers: {
       registrations: "users/registrations",
     }
+
+  namespace :users do
+    get '/view/:id', to: 'users#show', as: 'profile', only: [:show]
+  end
   root "welcome#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

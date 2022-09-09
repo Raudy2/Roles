@@ -7,11 +7,11 @@
     </h1>
 
     <p class="text-lg p-2 font-medium break-words ">
-      <%= post.content %>
+      <%= truncate post.content %>
     </p>
 
     <p class=" text-center p-2">
-      <strong>Author:</strong> <%= link_to post.author.name, edit_user_registration_path, class: 'p-1 text-sky-500 dark:text-sky-400' %>
+      <strong>Author:</strong> <%= link_to post.author.name, users_profile_path(post.author), class: 'p-1 text-sky-500 dark:text-sky-400' %>
     </p>
   </div>
 </div>

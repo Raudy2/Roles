@@ -7,11 +7,10 @@ class User < ApplicationRecord
 
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles
+  has_many :author, class_name: "Post", foreign_key: :author_id, inverse_of: :author, dependent: :destroy
 
-  has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize_to_limit: [100, nil]
-  end
 
+  has_one_attached :avatar 
 
   def can_edit?(resource)
 

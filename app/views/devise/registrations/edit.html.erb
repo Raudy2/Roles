@@ -21,7 +21,7 @@
       <%= f.label :avatar, class: 'form-label' %>
 
       <div class="flex items-center gap-4">
-          <%= user_avatar f.object, class: "rounded-full" %>
+          <%= user_avatar f.object, include_user: true, class: "rounded-full" %>
           <div>
             <%= f.file_field :avatar, accept: "image/*", class: "file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100" %>
           </div>
@@ -41,10 +41,8 @@
       <div class="mb-6">
         <%= f.submit "Update", class: "inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-lg btn-primary-outline hover:text-white hover:bg-primary-500 focus:ring-0  transition duration-150 ease-in-out w-full" %>
       </div>
-      <div class="mb-6 flex flex-wrap justify-center items-center">
-        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" },class: 'btn-danger-outline hover:bg-danger-600 hover:text-white ', method: :delete %></p>
-      </div>
     <% end %>
   </div>
+
 
 </div>

@@ -1,12 +1,17 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+  <div>
+    <%= image_tag(post.images, class: "rounded-t-lg h-36 items-center") if post.images.persisted? %>
+    
+    <h1 class="text-black text-center text-gray-900 text-3xl m-2">
+      <%= post.title %>
+    </h1>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
+    <p class="text-lg p-2 font-medium break-words ">
+      <%= truncate post.content %>
+    </p>
 
+    <p class=" text-center p-2">
+      <strong>Author:</strong> <%= link_to post.author.name, users_profile_path(post.author), class: 'p-1 text-sky-500 dark:text-sky-400' %>
+    </p>
+  </div>
 </div>

@@ -1,0 +1,18 @@
+<section class="h-full gradient-form md:h-screen">
+  <div class="flex justify-center w-full mx-auto sm:w-6/12 md:w-8/12 items-center flex-wrap h-full g-6 text-gray-800">
+    <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
+      <div class="bg-gray p-8 rounded-md shadow-lg" >
+        <%= image_tag(@user.avatar, class: "rounded-full h-28 items-start") if @user.avatar.persisted? %>
+        <div class="grow h-28 " >
+          <p><strong><%= @user.name %></strong></p>
+          </p>
+        </div>
+        <div class="flex justify-end py-2 items-stretch ">
+          <a href="mailto:<%= @user.email %>" class="">
+            <%= @user.email %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

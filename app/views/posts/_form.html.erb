@@ -1,27 +1,34 @@
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<% if post.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <ul>
+      <% post.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
+
+<div class='mb-6'>
+  <%= form.label :title, class: 'form-label py-2'%>
+  <%= form.text_field :title, placeholder:"Your title", class: 'form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none' %>
+</div>
+
+<div class='mb-6' data-controller="text-limiter" data-text-limiter-limit-value=1000>
+  <%= form.label :content, class: 'form-label py-2' %>
+  <%#= form.text_area :content, class: 'form-control block w-full h-48 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder:"Your message", maxlength: 1000 %>
+  <%= form.text_area :content, class: 'form-control block w-full h-48 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder:"Your message" %>
+</div>
+
+<div class="mb-6">
+  <%= form.label :images, class: 'form-label py-2' %>
+  <%= form.file_field :images, accept: "image/*", class: 'ile:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100' %>
+</div>
+
+<div class='mb-6'>
+  <%= form.submit class: 'inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-lg btn-primary-outline hover:text-white hover:bg-primary-500 focus:ring-0  transition duration-150 ease-in-out w-full' %>
+</div>
+<% end %>
+ 

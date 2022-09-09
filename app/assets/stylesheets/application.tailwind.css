@@ -1,5 +1,6 @@
 @import "./css/dropdown.tailwind.css";
 @import "./css/alert.css";
+@import "./css/pagination.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

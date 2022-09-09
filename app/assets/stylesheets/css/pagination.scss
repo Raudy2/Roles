@@ -1,0 +1,27 @@
+.pagination {
+  @apply flex flex-wrap space-x-2;
+  .page {
+    @apply font-semibold text-sm bg-white w-10 h-10 p-2 outline-none overflow-hidden shadow-md rounded flex items-center justify-center mx-1;
+    a {
+      @apply w-10 h-10 p-4 outline-none flex items-center justify-center transition-all duration-500 ease-in-out;
+      &.active,
+      &:hover {
+        @apply bg-primary-700 text-white;
+      }
+    }
+    &.prev, 
+    &.next {
+      @apply w-auto px-0;
+      a {
+        @apply w-full px-4;
+      }
+    }
+    &.active {
+      @apply bg-primary-700 text-white;
+      a { @apply text-primary-600; }
+    }
+    &.disabled {
+      @apply bg-gray-100 px-4 shadow-sm text-gray-400 cursor-not-allowed;
+    }
+  }
+}

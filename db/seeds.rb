@@ -7,7 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 admin = User.create(name: "klaus", email: 'klaus@admin.com', password: '10168913', password_confirmation: '10168913')
+admin.save
 editor = User.create(name: "akashi", email: 'akashi@editable.com', password: '10168913', password_confirmation: '10168913')
+editor.save
 User.create(name: "Max", email: 'max@normal.com', password: '10168913', password_confirmation: '10168913')
 
 admin_user_role = Role.create(name: 'Admin User', reference: "User", access: :createable)
@@ -18,4 +20,4 @@ admin.user_roles.create(role: admin_user_role)
 admin.user_roles.create(role: admin_post_role)
 editor.user_roles.create(role: editor_post_role)
 
-FactoryBot.create_list(:post, 40)
+# FactoryBot.create_list(:post, 40)
